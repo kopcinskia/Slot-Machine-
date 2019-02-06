@@ -1,0 +1,29 @@
+{
+  "symbolsSrc": "./assets/images/symbols/",
+  "symbols": [
+    {
+      "key": "wild",
+      "fileName": "SYM1.png"
+    },
+    {
+      "key": "strawberry",
+      "fileName": "SYM3.png"
+    },
+    {
+      "key": "orange",
+      "fileName": "SYM4.png"
+    },
+    {
+      "key": "lemon",
+      "fileName": "SYM5.png"
+    },
+    {
+      "key": "watermelon",
+      "fileName": "SYM6.png"
+    },
+    {
+      "key": "berry",
+      "fileName": "SYM7.png"
+    }
+  ]
+}
