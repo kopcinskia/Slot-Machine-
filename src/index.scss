@@ -15,13 +15,22 @@ body {
   }
 }
 
-#preloader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  color: #fff;
-  height: 100%;
+#load_screen {
+  background: #000;
+  opacity: 1;
+  position: fixed;
+  z-index: 10;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
 }
+
+#load_screen > #loading{
+  background: #FFF;
+  width: 120px;
+  height: 24px;
+  margin: 300px auto
+}
+
 
 
