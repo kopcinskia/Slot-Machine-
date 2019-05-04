@@ -44,6 +44,6 @@ export function startGame() {
         document.body.appendChild(app.view);
         document.body.removeChild(app.view);
     }
-//TODO wydziel to
+
 
 }
