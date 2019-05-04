@@ -41,7 +41,7 @@ export function startGame() {
 
 const addStyleToCanvas = (div) => {
     div.view.style.position = 'absolute';
-    div.view.style.left = '5vw';
+    div.view.style.left = '7vw';
     div.view.style.top = '50%';
     div.view.style.width = '90vw';
     div.view.style.height = '90vh';
