@@ -1,9 +1,13 @@
 import * as PIXI from 'pixi.js'
 
 
-
-
 export function startGame() {
+
+    const gamediv = PIXI.autoDetectRenderer(); //{ transparent: true });
+    document.body.appendChild(gamediv.view);
+
+    addStyleToCanvas(gamediv);
+
 
 // TODO Load start page --> (nice animation after loading rectangle) https://www.youtube.com/watch?v=g77WfQ-blxI
 // TODO copy and customize animation animation in pixi.js  -->  https://pixijs.io/examples-v4/#/demos-advanced/slots.js
@@ -33,17 +37,14 @@ export function startGame() {
 
 // The application will create a canvas element for you that you
 // can then insert into the DOM
-    for(var i=0; i<100; i++) {
-        var mycanvas = document.getElementById("myCanvas");
-        const app = new PIXI.Application(1400, 700, {
-            view: mycanvas,
-            // transparent: true
-        });
-
-
-        document.body.appendChild(app.view);
-        document.body.removeChild(app.view);
-    }
-
-
 }
+
+const addStyleToCanvas = (div) => {
+    div.view.style.position = 'absolute';
+    div.view.style.left = '5vw';
+    div.view.style.top = '50%';
+    div.view.style.width = '90vw';
+    div.view.style.height = '90vh';
+    div.view.style.transform = 'translate3d( 0, -50%, 0 )';
+    div.view.style.background = 'rgba(#CCC, 0.5)';
+};

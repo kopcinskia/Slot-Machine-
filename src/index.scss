@@ -1,4 +1,8 @@
+$light-green: #95D875;
+$background-basic: #69A6D9;
+
 html, body {
+  background: $background-basic;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,12 +15,14 @@ body {
   background-size: cover;
 
   &.win {
-    background: #CCC;
+    background: $background-basic;
   }
 }
 
+
+
 #load_screen {
-  background: #003;
+  background: $background-basic;
   opacity: 1;
   position: fixed;
   z-index: 10;
@@ -31,14 +37,6 @@ body {
   height: 150px;
   margin: 300px auto;
   background: url(assets/images/Infinity-1.8s-200px.svg)
-}
-
-#myCanvas {
-
-  display: block;
-  opacity: 0.8;
-  margin-top: 2vh;
-  margin-left: 8vw;
 }
 
 
