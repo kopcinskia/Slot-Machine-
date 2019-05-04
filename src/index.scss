@@ -11,12 +11,12 @@ body {
   background-size: cover;
 
   &.win {
-    background: #fff;
+    background: #CCC;
   }
 }
 
 #load_screen {
-  background: #000;
+  background: #003;
   opacity: 1;
   position: fixed;
   z-index: 10;
@@ -25,12 +25,23 @@ body {
   height: 100vh;
 }
 
-#load_screen > #loading{
-  background: #FFF;
-  width: 120px;
-  height: 24px;
-  margin: 300px auto
+#loading {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  margin: 300px auto;
+  background: url(assets/images/Infinity-1.8s-200px.svg)
 }
+
+#myCanvas {
+
+  display: block;
+  opacity: 0.8;
+  margin-top: 2vh;
+  margin-left: 8vw;
+}
+
+
 
 
 

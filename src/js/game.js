@@ -1,6 +1,9 @@
 import * as PIXI from 'pixi.js'
 
-function startGame() {
+
+
+
+export function startGame() {
 
 // TODO Load start page --> (nice animation after loading rectangle) https://www.youtube.com/watch?v=g77WfQ-blxI
 // TODO copy and customize animation animation in pixi.js  -->  https://pixijs.io/examples-v4/#/demos-advanced/slots.js
@@ -14,7 +17,13 @@ function startGame() {
 // - push button cost c some coins
 // - buton disable and change graphic
 // - animiation start
+
+
+//TODO spin:
+    //
 // - when 3 wild in row u win <--- TODOS how did u know about the win?
+
+
 // - when win scores up
 // repeat
 //
@@ -24,31 +33,17 @@ function startGame() {
 
 // The application will create a canvas element for you that you
 // can then insert into the DOM
-    const app = new PIXI.Application();
-
-    document.body.appendChild(app.view);
-
-// load the texture we need
-    PIXI.loader.add('bunny', 'assets/images/symbols/SYM1.png').load((loader, resources) => {
-        // This creates a texture from a 'bunny.png' image
-        const bunny = new PIXI.Sprite(resources.bunny.texture);
-
-        // Setup the position of the bunny
-        bunny.x = app.renderer.width / 2;
-        bunny.y = app.renderer.height / 2;
-
-        // Rotate around the center
-        bunny.anchor.x = 0.5;
-        bunny.anchor.y = 0.5;
-
-        // Add the bunny to the scene we are building
-        app.stage.addChild(bunny);
-
-        // Listen for frame updates
-        app.ticker.add(() => {
-            // each frame we spin the bunny around a bit
-            bunny.rotation += 0.01;
+    for(var i=0; i<100; i++) {
+        var mycanvas = document.getElementById("myCanvas");
+        const app = new PIXI.Application(1400, 700, {
+            view: mycanvas,
+            // transparent: true
         });
-    });
+
+
+        document.body.appendChild(app.view);
+        document.body.removeChild(app.view);
+    }
+//TODO wydziel to
 
 }
