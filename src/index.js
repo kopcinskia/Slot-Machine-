@@ -1,5 +1,6 @@
-require('./index.scss');
 import { startGame } from './js/game'
+
+require('./index.scss');
 
 window.addEventListener("load", function() {
 
