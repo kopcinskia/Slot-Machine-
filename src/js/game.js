@@ -1,5 +1,5 @@
 require( 'pixi.js' );
-
+//TODO add require to webpack
 import { generateText } from "./startPages";
 
 

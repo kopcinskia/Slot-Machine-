@@ -8,6 +8,9 @@ export function generateText(app) {
         .add("../assets/fonts/hyper-stiff-round-bootied-opossum/font.png")
         .load(setup);
 
+    //todo
+    //add background and hello text to start page
+
     //Global variables
     let headerTextString,
         headerTextLength,
@@ -18,7 +21,7 @@ export function generateText(app) {
     function setup() {
 
         //Create a javascript string object with input text
-        headerTextString = String("Du musst Hillary werden!");
+        headerTextString = String("Hello, Sort-Machine!");
 
         //Get the string length
         headerTextLength = headerTextString.length;
