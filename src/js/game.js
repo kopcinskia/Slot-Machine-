@@ -17,6 +17,16 @@ export function startGame() {
 
 };
 
+const _addStyleToCanvas = (div) => {
+    div.view.style.position = 'absolute';
+    div.view.style.left = '3vw';
+    div.view.style.top = '50%';
+    div.view.style.width = '94vw';
+    div.view.style.height = '90vh';
+    div.view.style.transform = 'translate3d( 0, -50%, 0 )';
+    div.view.style.background = 'rgba(#CCC, 0.5)';
+};
+
 // TODO Load start page --> (nice animation after loading rectangle) https://www.youtube.com/watch?v=g77WfQ-blxI
 // TODO copy and customize animation animation in pixi.js  -->  https://pixijs.io/examples-v4/#/demos-advanced/slots.js
 // TODO customize start button animation after click in pixi.js
@@ -46,12 +56,4 @@ export function startGame() {
 // The application will create a canvas element for you that you
 // can then insert into the DOM
 
-const _addStyleToCanvas = (div) => {
-    div.view.style.position = 'absolute';
-    div.view.style.left = '3vw';
-    div.view.style.top = '50%';
-    div.view.style.width = '94vw';
-    div.view.style.height = '90vh';
-    div.view.style.transform = 'translate3d( 0, -50%, 0 )';
-    div.view.style.background = 'rgba(#CCC, 0.5)';
-};
+

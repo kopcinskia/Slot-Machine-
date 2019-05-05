@@ -4,6 +4,7 @@ export function generateText(app) {
 
     //Load images;
     app.loader
+        //todo change font       http://kvazars.com/littera/
         .add("../assets/fonts/hyper-stiff-round-bootied-opossum/font.fnt")
         .add("../assets/fonts/hyper-stiff-round-bootied-opossum/font.png")
         .load(setup);
@@ -58,5 +59,5 @@ export function generateText(app) {
             count++;
             requestAnimationFrame(renderTextAnimate);
         }
-    };
+    }
 }
