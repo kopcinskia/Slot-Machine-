@@ -5,12 +5,9 @@ export function generateText(app) {
     //Load images;
     app.loader
         //todo change font       http://kvazars.com/littera/
-        .add("../assets/fonts/hyper-stiff-round-bootied-opossum/font.fnt")
-        .add("../assets/fonts/hyper-stiff-round-bootied-opossum/font.png")
-        .load(generateTexy);
-
-    //todo
-    //add background and hello text to start page
+        .add("../assets/fonts/bitmap_fonts/Aqua-gradient.fnt")
+        .add("../assets/fonts/bitmap_fonts/Aqua-gradient.png")
+        .load(generateText);
 
     //Global variables
     let headerTextString,
@@ -19,23 +16,21 @@ export function generateText(app) {
         style,
         count;
 
-    function generateTexy() {
+    //TODO zamień zmienne na uniwersalny obiekt json
+
+    function generateText() {
 
         addTextBackground();
 
-        //Create a javascript string object with input text
-        headerTextString = String("Hello, Sort-Machine! ");
 
-        //Get the string length
+        headerTextString = String("Hello, Sort-Machine!");
         headerTextLength = headerTextString.length;
-
-        //Create a style for display text
-        style = {font: "font", align: "center"};
+        style = {font: "Aqua-gradient", align: "center"};
 
         //Create a pixi bitmap text object for display and position it.
-        headerDisplayText = new PIXI.extras.BitmapText("", style, 0xFF0000);
-        headerDisplayText.position.set(20, 50);
-        headerDisplayText.maxWidth = 780  ;
+        headerDisplayText = new PIXI.extras.BitmapText("", style);
+        headerDisplayText.position.set(50, 50);
+        headerDisplayText.maxWidth = 700  ;
 
         count = 0;
         renderTextAnimate();
@@ -44,7 +39,7 @@ export function generateText(app) {
 
             let textBackground = new PIXI.Graphics();
             // Rectangle
-            textBackground.beginFill(0x00ffff, 0.8).lineStyle(10, 0x000fff, 0.8);
+            textBackground.beginFill(0xCCCCCC, 0.8).lineStyle(10, 0x000fff, 0.8);
             textBackground.drawRoundedRect(10, 10, 780, 580, 50);
             textBackground.endFill();
 
@@ -53,7 +48,7 @@ export function generateText(app) {
 
         function renderTextAnimate() {
         //Update display text length
-        let time = 30;
+        let time = 120;
         let length = headerTextLength * count / time;
 
         //Grab a a substring of the input text beginning with the first character
