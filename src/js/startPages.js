@@ -24,18 +24,18 @@ export function generateText(app) {
         addTextBackground();
 
         //Create a javascript string object with input text
-        headerTextString = String("Hello, Sort-Machine!");
+        headerTextString = String("Hello, Sort-Machine! ");
 
         //Get the string length
         headerTextLength = headerTextString.length;
 
         //Create a style for display text
-        style = {font: "font", align: "center",};
+        style = {font: "font", align: "center"};
 
         //Create a pixi bitmap text object for display and position it.
-        headerDisplayText = new PIXI.extras.BitmapText("", style);
-        headerDisplayText.anchor.set(0, -0.5);
-        headerDisplayText.position.set(70, 0);
+        headerDisplayText = new PIXI.extras.BitmapText("", style, 0xFF0000);
+        headerDisplayText.position.set(20, 50);
+        headerDisplayText.maxWidth = 780  ;
 
         count = 0;
         renderTextAnimate();
@@ -44,17 +44,17 @@ export function generateText(app) {
 
             let textBackground = new PIXI.Graphics();
             // Rectangle
-            //TODO opacity 0.8
-            textBackground.beginFill(0x00ffff).lineStyle(10, 0x000fff);
+            textBackground.beginFill(0x00ffff, 0.8).lineStyle(10, 0x000fff, 0.8);
             textBackground.drawRoundedRect(10, 10, 780, 580, 50);
             textBackground.endFill();
-            
+
             app.stage.addChild(textBackground);
         }
 
         function renderTextAnimate() {
         //Update display text length
-        let length = headerTextLength * count / 30;
+        let time = 30;
+        let length = headerTextLength * count / time;
 
         //Grab a a substring of the input text beginning with the first character
         let mark = headerTextString.substr(0, Math.floor(length));
@@ -66,7 +66,7 @@ export function generateText(app) {
         app.stage.addChild(headerDisplayText);
         app.renderer.render(app.stage);
 
-        const i = headerTextLength * 3;
+        const i = headerTextLength * time / 10;
 
         if(i > count) {
             count++;

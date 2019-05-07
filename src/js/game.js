@@ -7,7 +7,7 @@ export function startGame() {
 
 
     //Create pixi application
-    const app = new PIXI.Application(); //{ transparent: true });
+    const app = new PIXI.Application({ transparent: true });
 
     //Add view to DOM with css
     _addStyleToCanvas(app);
