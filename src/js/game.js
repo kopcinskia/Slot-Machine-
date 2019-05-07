@@ -27,6 +27,8 @@ const _addStyleToCanvas = (div) => {
     div.view.style.background = 'rgba(#CCC, 0.5)';
 };
 
+
+
 // TODO Load start page --> (nice animation after loading rectangle) https://www.youtube.com/watch?v=g77WfQ-blxI
 // TODO copy and customize animation animation in pixi.js  -->  https://pixijs.io/examples-v4/#/demos-advanced/slots.js
 // TODO customize start button animation after click in pixi.js
