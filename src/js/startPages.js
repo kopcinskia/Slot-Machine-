@@ -1,31 +1,29 @@
 require('pixi.js');
 
-export function generateText(app) {
+export function generateHelloPage(app) {
 
-    //Load images;
-    app.loader
-        //todo change font       http://kvazars.com/littera/
-        .add("../assets/fonts/bitmap_fonts/Aqua-gradient.fnt")
-        .add("../assets/fonts/bitmap_fonts/Aqua-gradient.png")
-        .load(generateText);
-
-    //Global variables
     let headerTextString,
         headerTextLength,
         headerDisplayText,
         style,
         count;
 
-    //TODO zamień zmienne na uniwersalny obiekt json
+    //Load images;
+    app.loader
+        .add("../assets/fonts/bitmap_fonts/green-gradient.fnt")
+        .add("../assets/fonts/bitmap_fonts/green-gradient.png")
+        .load(generateText)
+    //     .load(generateButton);
+    // function generateButton() {
+    //
+    // }
 
     function generateText() {
 
-        addTextBackground();
-
-
-        headerTextString = String("Hello, Sort-Machine!");
+        _addTextBackground();
+        headerTextString = String("Hello, Gambler in Sort-Machine! Let's play, let's win and get a HUGE reward! Are you READY?");
         headerTextLength = headerTextString.length;
-        style = {font: "Aqua-gradient", align: "center"};
+        style = {font: "gren-gradient", align: "center",};
 
         //Create a pixi bitmap text object for display and position it.
         headerDisplayText = new PIXI.extras.BitmapText("", style);
@@ -33,22 +31,20 @@ export function generateText(app) {
         headerDisplayText.maxWidth = 700  ;
 
         count = 0;
-        renderTextAnimate();
+        _renderTextAnimate();
     }
-        function addTextBackground() {
 
-            let textBackground = new PIXI.Graphics();
-            // Rectangle
-            textBackground.beginFill(0xCCCCCC, 0.8).lineStyle(10, 0x000fff, 0.8);
-            textBackground.drawRoundedRect(10, 10, 780, 580, 50);
-            textBackground.endFill();
+    function _addTextBackground() {
 
-            app.stage.addChild(textBackground);
-        }
+        let textBackground = new PIXI.Graphics();
+        textBackground.beginFill(0xCCCCCC, 0.8).lineStyle(10, 0x000fff, 0.8);
+        textBackground.drawRoundedRect(10, 10, 780, 580, 50);
+        textBackground.endFill();
 
-        function renderTextAnimate() {
-        //Update display text length
-        let time = 120;
+        app.stage.addChild(textBackground);
+    }
+    function _renderTextAnimate() {
+        let time = 300;
         let length = headerTextLength * count / time;
 
         //Grab a a substring of the input text beginning with the first character
@@ -61,11 +57,11 @@ export function generateText(app) {
         app.stage.addChild(headerDisplayText);
         app.renderer.render(app.stage);
 
+        //calculate loop
         const i = headerTextLength * time / 10;
-
         if(i > count) {
             count++;
-            requestAnimationFrame(renderTextAnimate);
+            requestAnimationFrame(_renderTextAnimate);
         }
     }
 }

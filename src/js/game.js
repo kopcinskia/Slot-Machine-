@@ -1,6 +1,6 @@
 require( 'pixi.js' );
 //TODO add require to webpack
-import { generateText } from "./startPages";
+import { generateHelloPage } from "./startPages";
 
 
 export function startGame() {
@@ -13,7 +13,7 @@ export function startGame() {
     _addStyleToCanvas(app);
     document.body.appendChild(app.view);
 
-    generateText(app)
+    generateHelloPage(app)
 
 };
 
