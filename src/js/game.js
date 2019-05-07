@@ -1,11 +1,9 @@
 require( 'pixi.js' );
 //TODO add require to webpack
-import { generateHelloPage } from "./startPages";
 
+import { generateHelloPage } from "./hello_page/startPages";
 
 export function startGame() {
-
-
     //Create pixi application
     const app = new PIXI.Application({ transparent: true });
 
@@ -14,7 +12,6 @@ export function startGame() {
     document.body.appendChild(app.view);
 
     generateHelloPage(app)
-
 };
 
 const _addStyleToCanvas = (div) => {
@@ -26,8 +23,6 @@ const _addStyleToCanvas = (div) => {
     div.view.style.transform = 'translate3d( 0, -50%, 0 )';
     div.view.style.background = 'rgba(#CCC, 0.5)';
 };
-
-
 
 // TODO Load start page --> (nice animation after loading rectangle) https://www.youtube.com/watch?v=g77WfQ-blxI
 // TODO copy and customize animation animation in pixi.js  -->  https://pixijs.io/examples-v4/#/demos-advanced/slots.js
