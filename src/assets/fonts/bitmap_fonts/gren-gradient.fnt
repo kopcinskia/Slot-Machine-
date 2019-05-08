@@ -1,5 +1,5 @@
 <font>
-  <info face="gren-gradient" size="72" bold="0" italic="0" charset="" unicode="" stretchH="100" smooth="1" aa="1" padding="3,3,3,3" spacing="0,0" outline="0"/>
+  <info face="green-gradient" size="72" bold="0" italic="0" charset="" unicode="" stretchH="100" smooth="1" aa="1" padding="3,3,3,3" spacing="0,0" outline="0"/>
   <common lineHeight="80" base="65" scaleW="654" scaleH="512" pages="1" packed="0"/>
   <pages>
     <page id="0" file="gren-gradient.png"/>
