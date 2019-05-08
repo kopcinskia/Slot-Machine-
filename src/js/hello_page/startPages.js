@@ -4,6 +4,11 @@ import generateButton from './elements/deskButton'
 
 export function generateHelloPage(app) {
 
+    let helloPageContainer = new PIXI.Container();
+    helloPageContainer.name = 'helloPageContainer';
+
+    app.stage.addChild(helloPageContainer);
+
     let headerTextString,
         headerTextLength,
         headerDisplayText,
@@ -11,17 +16,17 @@ export function generateHelloPage(app) {
         count;
 
     //Load images;
-    app.loader
-        .add("../assets/fonts/bitmap_fonts/green-gradient.fnt")
-        .add("../assets/fonts/bitmap_fonts/green-gradient.png")
+    PIXI.loader
+        .add("../assets/fonts/bitmap_fonts/gren-gradient.fnt")
+        .add("../assets/fonts/bitmap_fonts/gren-gradient.png")
         .load(generateText);
 
     function generateText() {
 
         _addTextBackground();
-        headerTextString = String("Hello, Gambler in Sort-Machine! Let's play, let's win and get a HUGE reward! Are you READY?");
+        headerTextString = String("Hello, Gambler in Sort-Machine! Let's play,  and get a HUGE reward! Are you READY?");
         headerTextLength = headerTextString.length;
-        style = {font: "70px gren-gradient", align: "center",};
+        style = {font: "70px green-gradient", align: "center",};
 
         //Create a pixi bitmap text object for display and position it.
         headerDisplayText = new PIXI.extras.BitmapText("", style);
@@ -33,7 +38,7 @@ export function generateHelloPage(app) {
         _renderTextAnimate();
 
         //TODO segregate this code to another file
-        app.stage.addChild(generateButton(app));
+        helloPageContainer.addChild(generateButton(helloPageContainer, app));
     }
 
     function _addTextBackground() {
@@ -43,9 +48,10 @@ export function generateHelloPage(app) {
         textBackground.drawRoundedRect(10, 10, 780, 580, 50);
         textBackground.endFill();
 
-        app.stage.addChild(textBackground);
+        helloPageContainer.addChild(textBackground);
     }
     function _renderTextAnimate() {
+
         let time = 300;
         let length = headerTextLength * count / time;
 
@@ -56,8 +62,7 @@ export function generateHelloPage(app) {
         headerDisplayText.text = mark;
 
         //Add the displayText to the stage and render
-        app.stage.addChild(headerDisplayText);
-        app.renderer.render(app.stage);
+        helloPageContainer.addChild(headerDisplayText);
 
         //calculate loop
         const i = headerTextLength * time / 10;

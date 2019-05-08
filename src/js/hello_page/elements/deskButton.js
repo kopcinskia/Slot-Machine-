@@ -1,4 +1,6 @@
-export default function generateButton(app) {
+import {removeHelloPageContainer} from "./destroyAnimation";
+
+export default function generateButton(helloPageContainer, app) {
 
     const textureButton = PIXI.Texture.fromImage('../assets/images/buttons/button.png');
     const textureButtonDown = PIXI.Texture.fromImage('../assets/images/buttons/button_down.png');
@@ -30,7 +32,6 @@ export default function generateButton(app) {
         this.texture = textureButtonDown;
         this.alpha = 1;
     }
-
     function onButtonUp() {
         this.isdown = false;
         if (this.isOver) {
@@ -38,13 +39,8 @@ export default function generateButton(app) {
         } else {
             this.texture = textureButton;
         }
-
-        app.destroy()
-        //TODO animate out HelloPages
-        //try add all sprite to container and delate only container with all child
-        //segregate code
+        removeHelloPageContainer(helloPageContainer, app)
     }
-
     function onButtonOver() {
         this.isOver = true;
         if (this.isdown) {
@@ -52,7 +48,6 @@ export default function generateButton(app) {
         }
         this.texture = textureButtonOver;
     }
-
     function onButtonOut() {
         this.isOver = false;
         if (this.isdown) {
