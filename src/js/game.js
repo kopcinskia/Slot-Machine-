@@ -11,17 +11,17 @@ export function startGame() {
     _addStyleToCanvas(app);
     document.body.appendChild(app.view);
 
-    generateHelloPage(app)
+    app.loader
+        .load(generateHelloPage(app));
 };
 
 const _addStyleToCanvas = (div) => {
     div.view.style.position = 'absolute';
-    div.view.style.left = '3vw';
     div.view.style.top = '50%';
-    div.view.style.width = '94vw';
-    div.view.style.height = '90vh';
+    div.view.style.width = '100vw';
+    div.view.style.height = '100vh';
     div.view.style.transform = 'translate3d( 0, -50%, 0 )';
-    div.view.style.background = 'rgba(#CCC, 0.5)';
+    // div.view.style.background = 'rgba(#CCC, 0.5)';
 };
 
 // TODO Load start page --> (nice animation after loading rectangle) https://www.youtube.com/watch?v=g77WfQ-blxI

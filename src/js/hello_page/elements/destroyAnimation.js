@@ -1,7 +1,5 @@
 export function removeHelloPageContainer(removeHelloPageContainer, app) {
 
-    app.stop();
-
     PIXI.loader
         .add('spritesheet', '../assets/boom.json')
         .load(onAssetsLoaded);
@@ -10,7 +8,7 @@ export function removeHelloPageContainer(removeHelloPageContainer, app) {
         // create an array to store the textures
         let explosionTextures = [];
 
-        let i
+        let i;
         for (i = 0; i < 27; i++) {
             let texture = PIXI.Texture.fromFrame('Explosion_Sequence_A ' + (i + 1) + '.png');
             explosionTextures.push(texture);
@@ -27,15 +25,13 @@ export function removeHelloPageContainer(removeHelloPageContainer, app) {
         explosion.name = 'explosion';
         app.stage.addChild(explosion);
 
-        app.start();
-
         setTimeout(function () {
             removeHelloPageContainer.destroy();
 
         }, 1500);
         setTimeout(function () {
             explosion.destroy();
-        }, 3450);
+        }, 3350);
         //
     }
 }

@@ -45,7 +45,7 @@ export function generateHelloPage(app) {
 
         let textBackground = new PIXI.Graphics();
         textBackground.beginFill(0xCCCCCC, 0.8).lineStyle(10, 0x000fff, 0.8);
-        textBackground.drawRoundedRect(10, 10, 780, 580, 50);
+        textBackground.drawRoundedRect(25, 20, 750, 560, 50);
         textBackground.endFill();
 
         helloPageContainer.addChild(textBackground);
