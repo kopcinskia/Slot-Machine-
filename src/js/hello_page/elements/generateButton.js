@@ -21,11 +21,11 @@ export default function generateButton(helloPageContainer, app) {
         .on('pointerup', onButtonUp)
         .on('pointerupoutside', onButtonUp)
         .on('pointerover', onButtonOver)
-        .on('pointerout', onButtonOut);
+        .on('pointerout', onButtonOut)
 
     // add it to the stage
     button.rotation = Math.PI / -15;
-    return button;
+    helloPageContainer.addChild(button);
 
     function onButtonDown() {
         this.isdown = true;
@@ -33,12 +33,6 @@ export default function generateButton(helloPageContainer, app) {
         this.alpha = 1;
     }
     function onButtonUp() {
-        this.isdown = false;
-        if (this.isOver) {
-            this.texture = textureButtonOver;
-        } else {
-            this.texture = textureButton;
-        }
         removeHelloPageContainer(helloPageContainer, app)
     }
     function onButtonOver() {
